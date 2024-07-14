@@ -1,7 +1,10 @@
 package controllers
 
-import "net/http"
+import (
+	"net/http"
+	"webapp/src/utils"
+)
 
 func CarregarTelaDeLogin(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Welcome"))
+	utils.ExecutarTemplate(w, "login.html", nil)
 }

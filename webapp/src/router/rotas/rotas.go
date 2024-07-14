@@ -19,5 +19,7 @@ func Configurar(router *mux.Router) *mux.Router {
 	for _, rota := range rotas {
 		router.HandleFunc(rota.URI, rota.Funcao).Methods(rota.Metodo)
 	}
+	FileServer := http.FileServer(http.Dir("./assets"))
+	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", FileServer))
 	return router
 }
