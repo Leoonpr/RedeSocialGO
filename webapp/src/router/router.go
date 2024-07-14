@@ -1,9 +1,8 @@
 package router
 
 import (
-	"webapp/src/router/rotas"
-
 	"github.com/gorilla/mux"
+	"webapp/src/router/rotas"
 )
 
 func Gerar() *mux.Router {
